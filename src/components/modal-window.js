@@ -4,8 +4,7 @@ import PostList from './post-list';
 import PostAddForm from './post-add-form'
 
 
-export default function Modal(props) {
-  const {img, onCloseButtonClick} = props;
+export default function Modal({onCloseButtonClick, img}) {
   const [posts, setPosts] = useState([])
 
   
