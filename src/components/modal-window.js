@@ -8,18 +8,17 @@ export default function Modal({onCloseButtonClick, img}) {
   const [posts, setPosts] = useState([])
 
   
-  const addPost = (text, parentId, name) => {
-    createPost(text, parentId, name).then(post => {
+  const addPost = (text, name) => {
+    createPost(text, name).then(post => {
       setPosts([...posts, post])
     })
   }
 
 
-  const createPost = async (text, name, parentId = null) => {
+  const createPost = async (text, name) => {
     return {
       id: Math.random().toString(36),
       body: text,
-      parentId,
       username: name,
       createdAt: new Date().toLocaleString("ru", options)
     }
